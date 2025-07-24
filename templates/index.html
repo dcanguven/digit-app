@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Digit Recognizer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding-top: 30px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    canvas {
+      border: 2px solid #333;
+      background-color: white;
+      cursor: crosshair;
+    }
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Draw a Digit (0–9)</h1>
+  <canvas id="canvas" width="280" height="280"></canvas><br>
+  <button class="button" onclick="clearCanvas()">Clear</button>
+  <button class="button" onclick="predict()">Predict</button>
+  <div id="result"></div>
+
+  <script src="{{ url_for('static', filename='canvas.js') }}"></script>
+</body>
+</html>
